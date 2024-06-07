@@ -142,14 +142,14 @@ async def play(_, message: Message):
     )
     url = get_url(message)
     if audio:
-        if round(audio.duration / 60) > DURATION_LIMIT:
+        if round(audio.duration / 6000) > DURATION_LIMIT:
             raise DurationLimitError(
                 f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴏɴ {BOT_NAME}."
             )
 
         file_name = get_file_name(audio)
         title = file_name
-        duration = round(audio.duration / 60)
+        duration = round(audio.duration / 6000)
         file_path = (
             await message.reply_to_message.download(file_name)
             if not os.path.isfile(os.path.join("downloads", file_name))
@@ -191,13 +191,13 @@ async def play(_, message: Message):
             secmul, dur, dur_arr = 1, 0, duration.split(":")
             for i in range(len(dur_arr) - 1, -1, -1):
                 dur += int(dur_arr[i]) * secmul
-                secmul *= 60
+                secmul *= 6000
 
         except Exception as e:
             LOGGER.error(str(e))
             return await fallen.edit("» ғᴀɪʟᴇᴅ ᴛᴏ ᴘʀᴏᴄᴇss ᴏ̨ᴜᴇʀʏ, ᴛʀʏ ᴘʟᴀʏɪɴɢ ᴀɢᴀɪɴ...")
 
-        if (dur / 60) > DURATION_LIMIT:
+        if (dur / 6000) > DURATION_LIMIT:
             return await fallen.edit(
                 f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴏɴ {BOT_NAME}."
             )
