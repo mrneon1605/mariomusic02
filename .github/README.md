@@ -23,7 +23,7 @@ _**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [ғᴀʟʟᴇɴ ✘ 
 ━━━━━━━━━━━━━━━━━━━━
 
 <p align="center">
-  <img src="https://https://graph.org/file/5b01eac7d295f8be0b867.jpg">
+  <img src="https://graph.org/file/5b01eac7d295f8be0b867.jpg">
 </p>
 
 <p align="center">
